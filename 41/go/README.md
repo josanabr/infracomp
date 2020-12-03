@@ -6,6 +6,8 @@ En este directorio se encuentran los archivos:
 
 * [Dockerfile](Dockerfile), este archivo permite la creación de una imagen de Docker que al ejecutarse crea un contenedor que ejecuta un servidor web.
 
+* [haproxy.cfg](haproxy.cfg), este archivo contiene la configuración básica del balanceador de carga HAProxy. **Este archivo debe ajustarse para reflejar los IPs de sus contenedores**.
+
 ---
 
 ## Compilación y ejecución de `proyecto.go`
@@ -27,7 +29,7 @@ Ahora, usted puede abrir un navegador que vaya al url [http://localhost:8000](ht
 
 ---
 
-## Creación de contenedor `proyecto`
+## Creación de imagen `proyecto`
 
 Para crear la imagen que indica la presentación ejecute el siguiente comando:
 
