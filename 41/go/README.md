@@ -51,7 +51,7 @@ docker run proyecto
 
 * `docker build -t proyecto .` &#8594; crea la imagen con la aplicación en Go.
 Si durante el proceso de creación de la imagen obtiene un error como el siguiente:
-![Error imagen de Alpine](images/dockercoins_operating.png)
+![Error imagen de Alpine](images/error_alpine.png)
 Ejecute primero `docker pull alpine` y luego si ejecute el comando `docker build -t proyecto .`.
 
 * `docker run proyecto`  &#8594; comando para ejecutar la imagen creada en el punto anterior.
