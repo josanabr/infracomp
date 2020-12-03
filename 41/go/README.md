@@ -41,6 +41,21 @@ Para ejecutar un contenedor a partir de la imagen anterior ejecute el siguiente 
 docker run proyecto
 ```
 
+---
 
+## Comandos ejecutados al interior de la presentación
 
+* `go build proyecto.go` &#8594; compila el programa `proyecto.go`
 
+* `docker build -t proyecto .` &#8594; crea la imagen con la aplicación en Go.
+Si durante el proceso de creación de la imagen obtiene un error como el siguiente:
+![Error imagen de Alpine](images/dockercoins_operating.png)
+Ejecute primero `docker pull alpine` y luego si ejecute el comando `docker build -t proyecto .`.
+
+* `docker run proyecto`  &#8594; comando para ejecutar la imagen creada en el punto anterior.
+
+* `docker run -d proyecto`  &#8594; comando similar al anterior solo que esta vez el contenedor queda ejecutandose como un `daemon`.
+
+* `docker inspect $(docker ps -q) -f {{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}" - "{{.Name}}`  &#8594; comando que muestra los IPs de los diferenes contenedores.
+
+* `docker run -v $(pwd):/usr/local/haproxy -p 80:80 haproxy`  &#8594; comando para ejecutar el balanceador de carga [haproxy](http://www.haproxy.org/).
