@@ -59,3 +59,11 @@ Ejecute primero `docker pull alpine` y luego si ejecute el comando `docker build
 * `docker inspect $(docker ps -q) -f {{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}" - "{{.Name}}`  &#8594; comando que muestra los IPs de los diferenes contenedores.
 
 * `docker run -v $(pwd):/usr/local/haproxy -p 80:80 haproxy`  &#8594; comando para ejecutar el balanceador de carga [haproxy](http://www.haproxy.org/).
+
+* `docker stop $(docker ps -q)`  &#8594; comando para detener la ejecución de todos los contenedores.
+
+* `docker rm -f $(docker ps -aq)`  &#8594; comando para borrar todos los contenedores, se hayan detenido o no.
+
+* `docker rm -f $(docker ps -f status=exited -q)`  &#8594; comando para borrar aquellos contenedores que se hayan detenido únicamente.
+
+* `docker rmi -f $(docker images -q)`  &#8594; comando para borrar todas las imágenes de Docker.
